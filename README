@@ -1,1 +1,16 @@
-A simple starting Sinatra app for Heroku.
+Postreceiver
+------------
+
+Simple sinatra app that receives post requests and prints out results.
+I used it to test webhooks on Heroku.
+
+Endpoint is /test_order
+
+To tail the logs when you are testing
+> heroku logs --tail
+
+> curl -d "data=hello world" http://postreceiver.heroku.com
+
+2011-05-18T15:33:51+00:00 heroku[router]: POST postreceiver.heroku.com/test_order dyno=web.1 queue=0 wait=0ms service=1ms bytes=211
+2011-05-18T15:33:51+00:00 app[web.1]: Received:{"data"=>"hello world"}
+2011-05-18T15:33:51+00:00 app[web.1]: 69.165.129.104 - - [18/May/2011 08:33:51] "POST /test_order HTTP/1.0" 200 32 0.0005
