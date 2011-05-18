@@ -11,5 +11,5 @@ get '/' do
 end
 
 post '/test_order' do
-  "<pre>Received:\n#{params.inspect}</pre>"
+  "Received:\n#{params.inspect}"
 end
